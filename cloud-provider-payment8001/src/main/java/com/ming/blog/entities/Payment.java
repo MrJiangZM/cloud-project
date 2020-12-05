@@ -1,8 +1,21 @@
 package com.ming.blog.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+
 /**
- * @author Jiang Zaiming
+ * @author MrJiangZM
  * @date 2020/12/4 21:16
  */
-public class Payment {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Payment implements Serializable {
+
+    private Long id;
+    private String serial;
+
 }

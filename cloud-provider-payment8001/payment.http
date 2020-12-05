@@ -1,0 +1,19 @@
+GET http://localhost:8001/v1.0/payment/findById?id=1
+Accept: application/json
+
+###  通过id获取
+
+
+
+POST http://localhost:8001/v1.0/payment/save
+Content-Type: application/json
+
+{
+  "serial": "1234567890"
+}
+
+### save 添加接口
+
+
+
+
