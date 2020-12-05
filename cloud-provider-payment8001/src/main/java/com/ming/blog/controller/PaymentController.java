@@ -21,6 +21,7 @@ public class PaymentController {
     @PostMapping("/save")
     public CommonResult<String> save(@RequestBody Payment payment) {
         paymentService.save(payment);
+        System.out.println("11112341341513411");
         return new CommonResult<>(200, "success");
     }
 
