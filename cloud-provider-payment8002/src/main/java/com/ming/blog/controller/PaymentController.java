@@ -4,8 +4,11 @@ import com.ming.blog.common.CommonResult;
 import com.ming.blog.entities.Payment;
 import com.ming.blog.service.PaymentService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
@@ -25,8 +28,8 @@ public class PaymentController {
     @PostMapping("/save")
     public CommonResult<String> save(@RequestBody Payment payment) {
         paymentService.save(payment);
-        System.out.println("11112341341513411");
-        return new CommonResult<>(200, serverPort);
+        System.out.println(serverPort + "---" + serverPort);
+        return new CommonResult<>(200, "success");
     }
 
     @GetMapping("/findById")

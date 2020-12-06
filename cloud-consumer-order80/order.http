@@ -1,4 +1,4 @@
-GET http://localhost:80/consumer/v1.0/order/findById?id=2
+GET http://localhost:80/consumer/v1.0/order/findById?id=1
 Accept: application/json
 
 ###  通过id获取

@@ -22,7 +22,8 @@ import java.util.Map;
 @RequestMapping("/consumer/v1.0/order")
 public class OrderController {
 
-    private static final String URL = "http://localhost:8001";
+//    private static final String URL = "http://localhost:8002";
+    private static final String URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Resource
     private RestTemplate restTemplate;
