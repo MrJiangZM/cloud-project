@@ -1,0 +1,19 @@
+GET http://localhost:80/consumer/v1.0/order/findById?id=2
+Accept: application/json
+
+###  通过id获取
+
+
+
+POST http://localhost:80/consumer/v1.0/order/save
+Content-Type: application/json
+
+{
+  "serial": "1234567890qqqq"
+}
+
+### save 添加接口
+
+
+
+
