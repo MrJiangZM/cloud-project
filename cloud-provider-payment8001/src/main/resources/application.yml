@@ -21,6 +21,15 @@ eureka:
       #      defaultZone: http://eureka7001.com:7001/eureka
       #      集群版
       defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka, http://eureka7003.com:7003/eureka
+  instance:
+    # 服务id
+    instance-id: payment8001
+    # 是否可以查看ip
+    prefer-ip-address: true
+    # client 向 server发送心跳的时间 默认30 s
+    lease-renewal-interval-in-seconds: 1
+    # 服务端最后一次收到心跳等待时间上限，默认90秒 超时删除服务
+    lease-expiration-duration-in-seconds: 2
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

@@ -1,7 +1,13 @@
-GET http://localhost:80/consumer/v1.0/order/findById?id=1
+GET http://localhost:80/consumer/v1.0/order/findById?id=2
 Accept: application/json
 
 ###  通过id获取
+
+GET http://localhost:80/consumer/v1.0/order/service?id=2
+Accept: application/json
+
+###  通过id获取
+
 
 
 
