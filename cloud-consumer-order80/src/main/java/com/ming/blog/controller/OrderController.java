@@ -23,7 +23,7 @@ import java.util.Map;
 public class OrderController {
 
 //    private static final String URL = "http://localhost:8002";
-    private static final String URL = "http://CLOUD-PAYMENT-SERVICE";
+    private static final String URL = "http://CLOUD-PROVIDER-PAYMENT";
 
     @Resource
     private RestTemplate restTemplate;
