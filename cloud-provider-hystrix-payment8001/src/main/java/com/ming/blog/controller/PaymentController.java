@@ -27,5 +27,10 @@ public class PaymentController {
         return paymentService.paymentTimeOut(id);
     }
 
+    @GetMapping(value = "/rongduan/{id}")
+    public String rongduan(@PathVariable Integer id) {
+        System.out.println("rongduan");
+        return paymentService.testRongduan(id);
+    }
 
 }

@@ -14,3 +14,29 @@ eureka:
             defaultZone: http://eureka7001.com:7001/eureka
       #      集群版
 #      defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka, http://eureka7003.com:7003/eureka
+feign:
+  hystrix:
+    enabled: true  # true false 是开启或关闭feign自带的hystrix，如果使用自带的配置ribbon时间不生效
+    # 如果设置成true 设置 hystrix.command.default... 配置生效
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 10000
+        loggerLevel: full
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 300000
+      circuitBreaker:
+        sleepWindowInMilliseconds: 300000
+
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
+  SocketTimeout: 30000
+
