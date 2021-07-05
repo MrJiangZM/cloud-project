@@ -6,15 +6,20 @@ spring:
     name: cloud-gateway
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes:
-        - id: payment_routh1
-          uri: http://localhost:8001
+        - id: payment_route1
+          uri: lb://CLOUD-PROVIDER-PAYMENT # lb://serviceName 是SpringCloud提供的负载均衡
+#          uri: http://localhost:8001
           predicates:
-            - Path=/payment/get/**
-        - id: payment_routh2
-          uri: http://localhost:8001
+            - Path=/v1.0/payment/get/**   # 使用断言配置路由
+        - id: payment_route2
+#          uri: http://localhost:8001
+          uri: lb://CLOUD-PROVIDER-PAYMENT
           predicates:
-            - Path=/payment/lb/**
+            - Path=/v1.0/payment/lb/**
 
 eureka:
   instance:
@@ -23,7 +28,7 @@ eureka:
     service-url:
       register-with-eureka: true
       fetch-registery: true
-      defaultZone: #      单机版
-        defaultZone: http://eureka7001.com:7001/eureka
+      #      单机版
+      defaultZone: http://eureka7001.com:7001/eureka
         #      集群版
-        #      defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka, http://eureka7003.com:7003/eureka
+      #      defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka, http://eureka7003.com:7003/eureka

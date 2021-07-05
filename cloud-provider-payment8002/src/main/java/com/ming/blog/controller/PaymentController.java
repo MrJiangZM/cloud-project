@@ -37,13 +37,13 @@ public class PaymentController {
         return new CommonResult<>(200, "success");
     }
 
-    @GetMapping("/findById")
+    @GetMapping("/get/findById")
     public CommonResult<Payment> findById(Long id) {
         System.out.println(serverPort + "---" + serverPort);
         return new CommonResult<>(200, serverPort, paymentService.findById(id));
     }
 
-    @GetMapping("/service")
+    @GetMapping("/get/service")
     public CommonResult<Object> service(Long id) {
         List<String> services = discoveryClient.getServices();
         for (String e : services) {
