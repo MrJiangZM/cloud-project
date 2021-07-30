@@ -17,8 +17,11 @@ public class ConfigClientController {
     @Value("${config.info}")
     private String configInfo;
 
+    @Value("${test.test}")
+    private String test;
+
     @GetMapping("/config/info")
     public String getConfigInfo() {
-        return configInfo;
+        return configInfo + "---" + test;
     }
 }
